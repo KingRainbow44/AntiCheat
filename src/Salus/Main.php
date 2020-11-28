@@ -127,81 +127,10 @@
     	    }
     	}
     	
-    	public function CheckNoClip($event){
-    	   $player = $event->getPlayer();
-    	   $level = $player->getLevel();
-           $pos = new Vector3($player->getX(), $player->getY(), $player->getZ());
-           $BlockID = $level->getBlock($pos)->getId();
-           
-            if (
-            //BUILDING MATERIAL
-               $BlockID == 1
-            or $BlockID == 2
-            or $BlockID == 3
-            or $BlockID == 4
-            or $BlockID == 5
-            or $BlockID == 7
-            or $BlockID == 17
-            or $BlockID == 18
-            or $BlockID == 20
-            or $BlockID == 43
-            or $BlockID == 45
-            or $BlockID == 47
-            or $BlockID == 48
-            or $BlockID == 49
-            or $BlockID == 79
-            or $BlockID == 80
-            or $BlockID == 87
-            or $BlockID == 89
-            or $BlockID == 97
-            or $BlockID == 98
-            or $BlockID == 110
-            or $BlockID == 112
-            or $BlockID == 121
-            or $BlockID == 155
-            or $BlockID == 157
-            or $BlockID == 159
-            or $BlockID == 161
-            or $BlockID == 162
-            or $BlockID == 170
-            or $BlockID == 172
-            or $BlockID == 174
-            or $BlockID == 243
-            //ORES TODO 
-            or $BlockID == 14
-            or $BlockID == 15
-            or $BlockID == 16
-            or $BlockID == 21
-            or $BlockID == 56
-            or $BlockID == 73
-            or $BlockID == 129
-            ){
-                if(    !in_array(Block::SLAB                , $this->surroundings ) 
-                   and !in_array(Block::WOOD_STAIRS         , $this->surroundings )
-                   and !in_array(Block::COBBLE_STAIRS       , $this->surroundings )
-                   and !in_array(Block::BRICK_STAIRS        , $this->surroundings )
-                   and !in_array(Block::STONE_BRICK_STAIRS  , $this->surroundings )
-                   and !in_array(Block::NETHER_BRICKS_STAIRS, $this->surroundings )
-                   and !in_array(Block::SPRUCE_WOOD_STAIRS  , $this->surroundings )
-                   and !in_array(Block::BIRCH_WOODEN_STAIRS , $this->surroundings )
-                   and !in_array(Block::JUNGLE_WOOD_STAIRS  , $this->surroundings )
-                   and !in_array(Block::QUARTZ_STAIRS       , $this->surroundings )
-                   and !in_array(Block::WOOD_SLAB           , $this->surroundings )
-                   and !in_array(Block::ACACIA_WOOD_STAIRS  , $this->surroundings )
-                   and !in_array(Block::DARK_OAK_WOOD_STAIRS, $this->surroundings )
-                   and !in_array(Block::SNOW                , $this->surroundings )){  
-                      
-                      $this->point[$player->getName()]["noclip"] += (float) 1;
-			          if((float) $this->point[$player->getName()]["noclip"] > (float) 3){
-			               $event->setCancelled(); 
-					       $this->HackDetected($player, "No-Clip Hacks", "Salus", "1");
-                      }
-                }else{
-                    $this->point[$player->getName()]["noclip"] = (float) 0;
-                }
-           }else{
-              $this->point[$player->getName()]["noclip"] = (float) 0;
-           }
+    	public function CheckNoClip($event)
+	{
+		# Not used. Causes too many issues as of API 3.0.0 release.
+		return;
         }
 
         public function HackDetected(Player $player, $reason, $sender, $points){
