@@ -34,6 +34,8 @@
 	    
         /** @var array */
         public $fly = array();
+	    
+	const WALKING_SPEED = 4.3;
 
         public function onEnable() {
             if (!$this->isSpoon()) {
@@ -214,7 +216,9 @@
 					   $this->HackDetected($event->getDamager(), "Reach Hacks", "Salus", "1");
                     }
                 }else{
-                    $this->point[$event->getPlayer()->getName()]["reach"] = (float) 0;
+		    $player = $event->getEntity();
+		    assert($player instanceof Player);
+                    $this->point[$player->getName()]["reach"] = (float) 0;
                 }
             }
         }
