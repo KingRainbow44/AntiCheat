@@ -12,17 +12,16 @@ class SpeedTask extends PluginTask {
 	const WALKING_SPEED = 4.3;
 	
 	/** @var array */
-	public $previousPosition = array();
+	public $previousPosition;
 	/** @var array */
-	public $previousMotion = array();
+	public $previousMotion;
 	/** @var array */
-	public $lastCheckTick = array();
+	public $lastCheckTick;
     /** @var Main */
     private $p;
     
     public function __construct($p){
         $this->p = $p;
-        parent::__construct($p);
     }
 
 	public function onRun($currentTick) {
@@ -50,8 +49,8 @@ class SpeedTask extends PluginTask {
 			}
 
 			// Store current variables for the next tick
-			$this->previousMotion = $player->getMotion();
-			$this->previousPosition = $player->getPosition();
+			$this->previousMotion[$player->getName()] = $player->getMotion();
+			$this->previousPosition[$player->getName()] = $player->getPosition();
 			$this->lastCheckTick[$player->getName()] = $currentTick;
 		}
 	}
