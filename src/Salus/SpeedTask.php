@@ -5,7 +5,7 @@ namespace Salus;
 use pocketmine\entity\Effect;
 use pocketmine\level\Position;
 use pocketmine\math\Vector3;
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task as PluginTask;
 
 class SpeedTask extends PluginTask {
 
