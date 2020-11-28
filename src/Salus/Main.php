@@ -5,7 +5,7 @@
     use pocketmine\plugin\PluginBase;
     use pocketmine\network\mcpe\protocol\AdventureSettingsPacket;
     use pocketmine\network\mcpe\protocol\UpdateAttributesPacket;
-    use pocketmine/network/mcpe/protocol/SetPlayerGameTypePacket
+    use pocketmine\network\mcpe\protocol\SetPlayerGameTypePacket;
     use pocketmine\event\server\DataPacketReceiveEvent;
     use pocketmine\event\player\PlayerJoinEvent;
     use pocketmine\event\player\PlayerQuitEvent;
