@@ -1,5 +1,5 @@
-# Salus for PocketMine (pmmp) 3.0.0-ALPHA5
-[![Poggit-CI](https://poggit.pmmp.io/ci.shield/Driesboy/AntiCheat/~)](https://poggit.pmmp.io/ci/Driesboy/AntiCheat/~)
+# Salus for PocketMine (pmmp) 3.0.0
+[![Poggit-CI](https://poggit.pmmp.io/ci/KingRainbow44/AntiCheat/~)](https://poggit.pmmp.io/ci/KingRainbow44/AntiCheat/~)
 
 An AntiCheat for big servers
 
