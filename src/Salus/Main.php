@@ -5,6 +5,7 @@
     use pocketmine\plugin\PluginBase;
     use pocketmine\network\mcpe\protocol\AdventureSettingsPacket;
     use pocketmine\network\mcpe\protocol\UpdateAttributesPacket;
+    use pocketmine/network/mcpe/protocol/SetPlayerGameTypePacket
     use pocketmine\event\server\DataPacketReceiveEvent;
     use pocketmine\event\player\PlayerJoinEvent;
     use pocketmine\event\player\PlayerQuitEvent;
@@ -15,6 +16,7 @@
     use pocketmine\utils\TextFormat as TF;
     use pocketmine\item\Item;
     use pocketmine\entity\Entity;
+    use pocketmine\entity\Effect;
     use pocketmine\Player;
     use pocketmine\math\Vector3;
     use pocketmine\block\Block;
@@ -24,8 +26,12 @@
 
         /** @var array */
         public $point = array();
+	    
+        public $speed;
+	    
         /** @var array */
         public $surroundings = array();
+	    
         /** @var array */
         public $fly = array();
 
@@ -208,7 +214,7 @@
 					   $this->HackDetected($event->getDamager(), "Reach Hacks", "Salus", "1");
                     }
                 }else{
-                    $this->point[$player->getName()]["reach"] = (float) 0;
+                    $this->point[$event->getPlayer()->getName()]["reach"] = (float) 0;
                 }
             }
         }
